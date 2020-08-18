@@ -31,3 +31,6 @@ kubectl create -f srcs/yaml_files/mysql.yaml
 
 # PhpMyAdmin
 kubectl create -f srcs/yaml_files/phpmyadmin.yaml
+
+# WordPress
+kubectl create -f srcs/yaml_files/wordpress.yaml

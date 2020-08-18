@@ -8,7 +8,7 @@ spec:
   ports:
     - protocol: TCP
       port: 5050
-      targetPort: 5050
+      targetPort: 80
   type: LoadBalancer
 
 ---
@@ -29,7 +29,10 @@ spec:
         app: wordpress
     spec:
       containers:
-      - name: wordpress
-        image: wordpress
+      - envFrom:
+        - secretRef:
+            name: secrets
+        name: wordpress
+        image: wordpress:fpm-alpine
         ports:
-        - containerPort: 5050
+        - containerPort: 80

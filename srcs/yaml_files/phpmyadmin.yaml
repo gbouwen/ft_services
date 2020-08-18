@@ -32,6 +32,6 @@ spec:
         - secretRef:
             name: secrets
         name: phpmyadmin
-        image: phpmyadmin/phpmyadmin
+        image: phpmyadmin/phpmyadmin:5
         ports:
         - containerPort: 80
