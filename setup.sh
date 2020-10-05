@@ -6,31 +6,43 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/13 08:39:18 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/07/15 11:59:04 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/10/05 15:22:48 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
+# Start minikube
 minikube start --driver=virtualbox
 
-# Create system secrets
+# Create secrets
 kubectl create -f srcs/yaml_files/secrets.yaml
+kubectl create -f srcs/yaml_files/mysql-password.yaml
 
-# MetalLB
+# Install MetalLB
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
 # On first install only
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 
+# Configure MetalLB
 kubectl create -f srcs/yaml_files/metallb.yaml
 
-# Nginx
+# Configure Nginx
 kubectl create -f srcs/yaml_files/nginx.yaml
 
-# MySQL
+# Configure MySQL
 kubectl create -f srcs/yaml_files/mysql.yaml
 
-# PhpMyAdmin
+# Configure PhpMyAdmin
 kubectl create -f srcs/yaml_files/phpmyadmin.yaml
 
-# WordPress
+# Configure Wordpress
 kubectl create -f srcs/yaml_files/wordpress.yaml
+
+# Configure FTPS
+# kubectl create -f srcs/yaml_files/ftps.yaml
+
+# Configure InfluxDB
+# kubectl create -f srcs/yaml_files/influxdb.yaml
+
+# Configure Grafana
+# kubectl create -f srcs/yaml_files/grafana.yaml
