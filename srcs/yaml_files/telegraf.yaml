@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: telegraf
+spec:
+  selector:
+    app: telegraf
+  ports:
+    - protocol: TCP
+      port:
+      targetPort:
+  type: LoadBalancer
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telegraf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telegraf
+  template:
+    metadata:
+      labels:
+        app: telegraf
+    spec:
+      containers:
+      - envFrom:
+        - secretRef:
+            name: secrets
+        name: telegraf
+        image: telegraf
+        ports:
+        - containerPort:

@@ -6,7 +6,7 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/13 08:39:18 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/10/05 15:22:48 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/10/06 10:57:12 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,11 +38,14 @@ kubectl create -f srcs/yaml_files/phpmyadmin.yaml
 # Configure Wordpress
 kubectl create -f srcs/yaml_files/wordpress.yaml
 
-# Configure FTPS
-# kubectl create -f srcs/yaml_files/ftps.yaml
+# Configure Grafana
+kubectl create -f srcs/yaml_files/grafana.yaml
 
 # Configure InfluxDB
-# kubectl create -f srcs/yaml_files/influxdb.yaml
+kubectl create -f srcs/yaml_files/influxdb.yaml
 
-# Configure Grafana
-# kubectl create -f srcs/yaml_files/grafana.yaml
+# Configure Telegraf
+# kubectl create -f srcs/yaml_files/telegraf.yaml
+
+# Configure FTPS
+# kubectl create -f srcs/yaml_files/ftps.yaml
