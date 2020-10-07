@@ -9,3 +9,9 @@ ln -s ~/goinfre/docker ~/Library/Containers/com.docker.docker
 mkdir -p ~/goinfre/minikube
 chmod +x ~/goinfre/minikube
 export MINIKUBE_HOME=/Volumes/Storage/goinfre/gbouwen/minikube/
+
+# HOW TO CREATE DATA SOURCE IN GRAFANA
+create database in influxdb
+go to grafana -> add datasource
+url = http://influxdb:8086
+database = telegraf

@@ -33,11 +33,10 @@ spec:
       - envFrom:
         - secretRef:
             name: secrets
-        image: influxdb
         name: influxdb
+        image: influxdb
         ports:
         - containerPort: 8086
-          name: influxdb
         volumeMounts:
         - name: influxdb-persistent-storage
           mountPath: /var/lib/influxdb

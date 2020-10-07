@@ -6,7 +6,7 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/13 08:39:18 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/10/06 10:57:12 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/10/07 15:01:13 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,8 @@ kubectl create -f srcs/yaml_files/grafana.yaml
 kubectl create -f srcs/yaml_files/influxdb.yaml
 
 # Configure Telegraf
-# kubectl create -f srcs/yaml_files/telegraf.yaml
+kubectl create -f srcs/yaml_files/telegraf-configmap.yaml
+kubectl create -f srcs/yaml_files/telegraf.yaml
 
 # Configure FTPS
 # kubectl create -f srcs/yaml_files/ftps.yaml
