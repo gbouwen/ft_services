@@ -6,7 +6,7 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/13 08:39:18 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/10/12 15:48:00 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/10/13 14:33:10 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ docker build -t nginx-alpine srcs/docker/nginx/
 
 # Create secrets
 kubectl create -f srcs/yaml_files/secrets.yaml
-kubectl create -f srcs/yaml_files/mysql-password.yaml
 
 # Install MetalLB
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml

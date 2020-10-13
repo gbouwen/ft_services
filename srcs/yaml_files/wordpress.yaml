@@ -29,18 +29,12 @@ spec:
         app: wordpress
     spec:
       containers:
-      - image: wordpress
+      - envFrom:
+        - secretRef:
+            name: secrets
         name: wordpress
-        env:
-        - name: WORDPRESS_DB_HOST
-          value: mysql
-        - name: WORDPRESS_DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-pass
-              key: password
+        image: wordpress
         ports:
         - containerPort: 80
-          name: wordpress
 
 # change ports to 5050
