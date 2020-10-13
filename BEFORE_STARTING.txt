@@ -15,3 +15,5 @@ create database in influxdb
 go to grafana -> add datasource
 url = http://influxdb:8086
 database = telegraf
+
+# HOW TO RUN DOCKER IMAGES

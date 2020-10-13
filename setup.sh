@@ -6,27 +6,27 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/13 08:39:18 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/10/12 14:40:19 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/10/12 15:48:00 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
+
+# Start minikube
+minikube start --driver=virtualbox
 
 # Set environment
 eval $(minikube docker-env)
 
 # Build Dockerfiles
-# docker build -t nginx-alpine srcs/docker/nginx/Dockerfile
-# docker build -t mysql-alpine srcs/docker/mysql/Dockerfile
-# docker build -t phpmyadmin-alpine srcs/docker/phpmyadmin/Dockerfile
-# docker build -t wordpress-alpine srcs/docker/wordpress/Dockerfile
-# docker build -t influxdb-alpine srcs/docker/influxdb/Dockerfile
-# docker build -t grafana-alpine srcs/docker/grafana/Dockerfile
-# docker build -t influxdb-alpine srcs/docker/influxdb/Dockerfile
-# docker build -t ftps-alpine srcs/docker/ftps/Dockerfile
 
-# in yaml file: imagePullPolicy: never
-
-# Start minikube
-minikube start --driver=virtualbox
+# Build nginx
+docker build -t nginx-alpine srcs/docker/nginx/
+# docker build -t mysql-alpine srcs/docker/mysql/
+# docker build -t phpmyadmin-alpine srcs/docker/phpmyadmin/
+# docker build -t wordpress-alpine srcs/docker/wordpress/
+# docker build -t influxdb-alpine srcs/docker/influxdb/
+# docker build -t grafana-alpine srcs/docker/grafana/
+# docker build -t influxdb-alpine srcs/docker/influxdb/
+# docker build -t ftps-alpine srcs/docker/ftps/
 
 # Create secrets
 kubectl create -f srcs/yaml_files/secrets.yaml
