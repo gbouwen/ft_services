@@ -7,7 +7,11 @@ RUN apk update && apk add mysql mysql-client
 
 RUN mkdir /run/mysqld
 
-RUN mysql_install_db --user=root
+RUN addgroup mysql mysql
+
+RUN chown -R mysql.mysql /var/lib/mysql
+
+RUN mysql_install_db --user=mysql --basedir=/usr/ --datadir=/var/lib/mysql
 
 ENV	MYSQL_ROOT_PASSWORD="root" \
 	MYSQL_DATABASE="wordpress" \
