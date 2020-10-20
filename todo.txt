@@ -1,4 +1,0 @@
-2020-10-13 16:07:11 0 [Note] Plugin 'FEEDBACK' is disabled.
-2020-10-13 16:07:11 0 [ERROR] Could not open mysql.plugin table. Some plugins may be not loaded
-2020-10-13 16:07:11 0 [ERROR] Can't open and lock privilege tables: Table 'mysql.servers' doesn't exist
-2020-10-13 16:07:11 0 [ERROR] Fatal error: Can't open and lock privilege tables: Table 'mysql.db' doesn't exist
