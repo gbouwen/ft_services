@@ -32,6 +32,7 @@ spec:
         - secretRef:
             name: secrets
         name: phpmyadmin
-        image: phpmyadmin/phpmyadmin
+        image: phpmyadmin-alpine
+        imagePullPolicy: Never
         ports:
         - containerPort: 80
