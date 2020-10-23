@@ -8,7 +8,7 @@ spec:
   ports:
     - protocol: TCP
       port: 5000
-      targetPort: 80
+      targetPort: 5000
   type: LoadBalancer
 
 ---
@@ -35,4 +35,4 @@ spec:
         image: phpmyadmin-alpine
         imagePullPolicy: Never
         ports:
-        - containerPort: 80
+        - containerPort: 5000
