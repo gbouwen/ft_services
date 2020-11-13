@@ -1,17 +1,20 @@
-FROM alpine
+FROM	alpine
 
-EXPOSE 3306
+EXPOSE	3306
 
-RUN apk update && apk add mysql mysql-client
+RUN		apk update && apk add mysql mysql-client
 
-RUN mkdir -p /run/mysqld
+RUN		mkdir -p /run/mysqld
 
-ENV MYSQL_ROOT_PASSWORD="root" \
-	MYSQL_DATABASE="wordpress" \
-	MYSQL_USER="admin" \
-	MYSQL_PASSWORD="admin"
+RUN		addgroup mysql mysql
+COPY	my.cnf /etc/mysql/my.cnf
 
-VOLUME	/var/lib/mysql
+ENV 	MYSQL_ROOT_PASSWORD="root" \
+		MYSQL_DATABASE="wordpress" \
+		MYSQL_USER="admin" \
+		MYSQL_PASSWORD="admin"
+
+VOLUME	"/var/lib/mysql"
 
 COPY	setup.sh /tmp
 RUN		chmod +x /tmp/setup.sh

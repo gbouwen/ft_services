@@ -1,2 +1,2 @@
 eval $(minikube docker-env)
-docker rmi phpmyadmin-alpine
+docker rmi mysql-alpine

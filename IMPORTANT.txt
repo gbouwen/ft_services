@@ -1,10 +1,10 @@
-# RUN THESE COMMANDS BEFORE STARTING DOCKER
+# RUN THESE COMMANDS BEFORE STARTING DOCKER @ CODAM
 
   mkdir -p ~/goinfre/docker
   rm -rf ~/Library/Containers/com.docker.docker
   ln -s ~/goinfre/docker ~/Library/Containers/com.docker.docker
 
-# RUN THESE COMMANDS BEFORE STARTING MINIKUBE
+# RUN THESE COMMANDS BEFORE STARTING MINIKUBE @ CODAM
 
   mkdir -p ~/goinfre/minikube
   chmod +x ~/goinfre/minikube
@@ -23,3 +23,7 @@
 
   # remove all docker containers
   docker rm -f $(docker ps -a -q)
+
+# ACCESS POD
+
+  kubectl exec -it POD_NAME --/bin/sh
