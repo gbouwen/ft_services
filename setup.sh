@@ -6,7 +6,7 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/13 08:39:18 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/10/21 17:41:02 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/10/13 15:50:21 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ eval $(minikube docker-env)
 
 # Build Dockerfiles
 
+# Build nginx
 docker build -t nginx-alpine srcs/docker/nginx/
 docker build -t mysql-alpine srcs/docker/mysql/
 # docker build -t phpmyadmin-alpine srcs/docker/phpmyadmin/
