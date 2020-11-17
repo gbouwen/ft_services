@@ -37,5 +37,3 @@ spec:
         image: wordpress
         ports:
         - containerPort: 80
-
-# change ports to 5050

@@ -8,9 +8,9 @@ spec:
   selector:
     app: grafana
   ports:
-    - protocol: TCP
-      port: 3000
-      targetPort: 3000
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
   type: LoadBalancer
 
 ---
@@ -32,5 +32,18 @@ spec:
       containers:
       - name: grafana
         image: grafana/grafana
+        volumeMounts:
+        - mountPath: /etc/grafana/provisioning/datasources/influxdb-datasource.yaml
+          name: grafana-config
+          readOnly: true
+          subPath: influxdb-datasource.yaml
+        - mountPath: /etc/grafana/provisioning/dashboards/grafana-dashboard-provider.yaml
+          name: grafana-config
+          readOnly: true
+          subPath: grafana-dashboard-provider.yaml
         ports:
         - containerPort: 3000
+      volumes:
+      - name: grafana-config
+        configMap:
+          name: grafana-config

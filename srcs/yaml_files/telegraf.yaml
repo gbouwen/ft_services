@@ -1,3 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: telegraf
+  labels:
+    app: telegraf
+spec:
+  selector:
+    app: telegraf
+  ports:
+  - protocol: UDP
+    port: 8125
+    targetPort: 8125
+  type: ClusterIP
+
+---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -27,3 +44,6 @@ spec:
         - name: telegraf-configmap
           configMap:
             name: telegraf-configmap
+        - name: docker-socket
+          hostPath:
+            path: /var/run/docker.sock
