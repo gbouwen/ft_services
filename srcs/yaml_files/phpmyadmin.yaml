@@ -8,7 +8,7 @@ spec:
   ports:
     - protocol: TCP
       port: 5000
-      targetPort: 5000
+      targetPort: 80
   type: LoadBalancer
 
 ---
@@ -32,7 +32,6 @@ spec:
         - secretRef:
             name: secrets
         name: phpmyadmin
-        image: phpmyadmin
-        imagePullPolicy: Never
+        image: phpmyadmin/phpmyadmin
         ports:
-        - containerPort: 5000
+        - containerPort: 80
