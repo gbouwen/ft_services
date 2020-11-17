@@ -27,6 +27,7 @@ $i = 0;
 $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'cookie';
+$cfg['TempDir'] = '/tmp';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = 'mysql';
 $cfg['Servers'][$i]['user'] = 'admin';

@@ -34,7 +34,7 @@ spec:
         - secretRef:
             name: secrets
         name: mysql
-        image: mysql-alpine
+        image: mysql
         imagePullPolicy: Never
         ports:
         - containerPort: 3306
