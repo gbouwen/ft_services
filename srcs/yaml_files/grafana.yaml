@@ -41,6 +41,34 @@ spec:
           name: grafana-config
           readOnly: true
           subPath: grafana-dashboard-provider.yaml
+        - mountPath: /var/lib/grafana/dashboards/nginx-dashboard.json
+          name: grafana-config
+          readOnly: true
+          subPath: nginx-dashboard.json
+        - mountPath: /var/lib/grafana/dashboards/mysql-dashboard.json
+          name: grafana-config
+          readOnly: true
+          subPath: mysql-dashboard.json
+        - mountPath: /var/lib/grafana/dashboards/phpmyadmin-dashboard.json
+          name: grafana-config
+          readOnly: true
+          subPath: phpmyadmin-dashboard.json
+        - mountPath: /var/lib/grafana/dashboards/wordpress-dashboard.json
+          name: grafana-config
+          readOnly: true
+          subPath: wordpress-dashboard.json
+        - mountPath: /var/lib/grafana/dashboards/influxdb-dashboard.json
+          name: grafana-config
+          readOnly: true
+          subPath: influxdb-dashboard.json
+        - mountPath: /var/lib/grafana/dashboards/telegraf-dashboard.json
+          name: grafana-config
+          readOnly: true
+          subPath: telegraf-dashboard.json
+        - mountPath: /var/lib/grafana/dashboards/grafana-dashboard.json
+          name: grafana-config
+          readOnly: true
+          subPath: grafana-dashboard.json
         ports:
         - containerPort: 3000
       volumes:

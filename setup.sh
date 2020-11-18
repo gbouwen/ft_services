@@ -55,6 +55,13 @@ kubectl create -f srcs/yaml_files/wordpress.yaml
 kubectl create configmap grafana-config \
 		--from-file=srcs/yaml_files/influxdb-datasource.yaml \
 		--from-file=srcs/yaml_files/grafana-dashboard-provider.yaml \
+		--from-file=srcs/yaml_files/json/nginx-dashboard.json \
+		--from-file=srcs/yaml_files/json/mysql-dashboard.json \
+		--from-file=srcs/yaml_files/json/phpmyadmin-dashboard.json \
+		--from-file=srcs/yaml_files/json/wordpress-dashboard.json \
+		--from-file=srcs/yaml_files/json/influxdb-dashboard.json \
+		--from-file=srcs/yaml_files/json/telegraf-dashboard.json \
+		--from-file=srcs/yaml_files/json/grafana-dashboard.json
 
 kubectl create -f srcs/yaml_files/grafana.yaml
 
@@ -62,7 +69,7 @@ kubectl create -f srcs/yaml_files/grafana.yaml
 kubectl create -f srcs/yaml_files/influxdb.yaml
 
 # Configure Telegraf
-kubectl create configmap telegraf-configmap
+# kubectl create configmap telegraf-configmap
 kubectl create -f srcs/yaml_files/telegraf.yaml
 
 # Configure FTPS
