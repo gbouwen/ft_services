@@ -28,7 +28,7 @@ eval $(minikube docker-env)
 # docker build -t ftps-alpine srcs/docker/ftps/
 
 # Create secrets
-kubectl create -f srcs/yaml_files/secrets.yaml
+kubectl create -f srcs/secrets.yaml
 
 # Install MetalLB
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
@@ -37,40 +37,39 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manife
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 
 # Configure MetalLB
-kubectl create -f srcs/yaml_files/metallb.yaml
+kubectl create -f srcs/metallb.yaml
 
 # Configure Nginx
-kubectl create -f srcs/yaml_files/nginx.yaml
+kubectl create -f srcs/nginx/nginx.yaml
 
 # Configure MySQL
-kubectl create -f srcs/yaml_files/mysql.yaml
+kubectl create -f srcs/mysql/mysql.yaml
 
 # Configure PhpMyAdmin
-kubectl create -f srcs/yaml_files/phpmyadmin.yaml
+kubectl create -f srcs/phpmyadmin/phpmyadmin.yaml
 
 # Configure Wordpress
-kubectl create -f srcs/yaml_files/wordpress.yaml
+kubectl create -f srcs/wordpress/wordpress.yaml
 
 # Configure Grafana
 kubectl create configmap grafana-config \
-		--from-file=srcs/yaml_files/influxdb-datasource.yaml \
-		--from-file=srcs/yaml_files/grafana-dashboard-provider.yaml \
-		--from-file=srcs/yaml_files/json/nginx-dashboard.json \
-		--from-file=srcs/yaml_files/json/mysql-dashboard.json \
-		--from-file=srcs/yaml_files/json/phpmyadmin-dashboard.json \
-		--from-file=srcs/yaml_files/json/wordpress-dashboard.json \
-		--from-file=srcs/yaml_files/json/influxdb-dashboard.json \
-		--from-file=srcs/yaml_files/json/telegraf-dashboard.json \
-		--from-file=srcs/yaml_files/json/grafana-dashboard.json
+		--from-file=srcs/grafana/influxdb-datasource.yaml \
+		--from-file=srcs/grafana/grafana-dashboard-provider.yaml \
+		--from-file=srcs/grafana/json_files/nginx-dashboard.json \
+		--from-file=srcs/grafana/json_files/mysql-dashboard.json \
+		--from-file=srcs/grafana/json_files/phpmyadmin-dashboard.json \
+		--from-file=srcs/grafana/json_files/wordpress-dashboard.json \
+		--from-file=srcs/grafana/json_files/influxdb-dashboard.json \
+		--from-file=srcs/grafana/json_files/telegraf-dashboard.json \
+		--from-file=srcs/grafana/json_files/grafana-dashboard.json
 
-kubectl create -f srcs/yaml_files/grafana.yaml
+kubectl create -f srcs/grafana/grafana.yaml
 
 # Configure InfluxDB
-kubectl create -f srcs/yaml_files/influxdb.yaml
+kubectl create -f srcs/influxdb/influxdb.yaml
 
 # Configure Telegraf
-# kubectl create configmap telegraf-configmap
-kubectl create -f srcs/yaml_files/telegraf.yaml
+kubectl create -f srcs/telegraf/telegraf.yaml
 
 # Configure FTPS
 # kubectl create -f srcs/yaml_files/ftps.yaml
