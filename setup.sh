@@ -6,7 +6,7 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/13 08:39:18 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/11/19 13:27:53 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/11/19 16:04:21 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ eval $(minikube docker-env)
 # Build Dockerfiles
 
 docker build -t nginx srcs/nginx
-# docker build -t mysql srcs/mysql
-# docker build -t phpmyadmin srcs/phpmyadmin
+docker build -t mysql srcs/mysql
+docker build -t phpmyadmin srcs/phpmyadmin
 # docker build -t wordpress-alpine srcs/wordpress
 # docker build -t influxdb-alpine srcs/influxdb
 # docker build -t grafana-alpine srcs/grafana

@@ -1,2 +1,2 @@
-kubectl delete deployment nginx
-kubectl delete svc nginx
+kubectl delete deployment phpmyadmin
+kubectl delete svc phpmyadmin
