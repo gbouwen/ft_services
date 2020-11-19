@@ -18,11 +18,17 @@
 
 # USEFUL DOCKER STUFF
 
+  # build docker image
+  docker build -t IMAGE_NAME location/of/dockerfile
+
   # run docker image
-  docker run -it "image-name"
+  docker run -it IMAGE_NAME
 
   # remove all docker containers
   docker rm -f $(docker ps -a -q)
+
+  # use minikube docker environment
+  eval $(minikube docker-env)
 
 # ACCESS POD
 
