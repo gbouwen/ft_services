@@ -19,6 +19,7 @@ RUN mv phpmyadmin /www
 RUN chmod -R 777 /usr/share/webapps
 
 COPY srcs/config.inc.php /www
+COPY srcs/php.ini /etc/php7/php.ini
 
 # NGinX
 

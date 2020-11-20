@@ -32,4 +32,4 @@
 
 # ACCESS POD
 
-  kubectl exec -it POD_NAME --/bin/sh
+  kubectl exec -it POD_NAME -- /bin/sh
