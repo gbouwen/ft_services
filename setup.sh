@@ -19,7 +19,7 @@ eval $(minikube docker-env)
 # Build Dockerfiles
 
 docker build -t nginx srcs/nginx
-# docker build -t mysql srcs/mysql
+docker build -t mysql srcs/mysql
 docker build -t phpmyadmin srcs/phpmyadmin
 # docker build -t wordpress-alpine srcs/wordpress
 # docker build -t influxdb-alpine srcs/influxdb
