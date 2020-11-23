@@ -18,7 +18,9 @@ RUN chown -R mysql:mysql /var/lib/mysql
 
 COPY /srcs/my.cnf /etc/mysql/my.cnf
 COPY /srcs/mysql_setup.sh /tmp
+COPY /srcs/init_mysql /tmp
 RUN chmod +x /tmp/mysql_setup.sh
+RUN chmod +x /tmp/init_mysql
 
 VOLUME /var/lib/mysql
 
