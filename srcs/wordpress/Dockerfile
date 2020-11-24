@@ -16,7 +16,7 @@ RUN tar -xzvf latest.tar.gz
 RUN rm latest.tar.gz
 WORKDIR /
 
-COPY srcs/wp-config.php /wordpress/wp-config.php
+COPY srcs/wp-config.php /var/www/wordpress/wp-config.php
 
 # NginX
 
