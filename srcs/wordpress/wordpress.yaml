@@ -10,7 +10,7 @@ spec:
   ports:
     - protocol: TCP
       port: 5050
-      targetPort: 80
+      targetPort: 5050
   type: LoadBalancer
 
 ---
@@ -35,5 +35,6 @@ spec:
             name: secrets
         name: wordpress
         image: wordpress
+        imagePullPolicy: Never
         ports:
-        - containerPort: 80
+        - containerPort: 5050
