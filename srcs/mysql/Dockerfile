@@ -19,8 +19,8 @@ COPY /srcs/create_init_file.sh /tmp
 RUN chmod +x /tmp/create_init_file.sh
 RUN sh /tmp/create_init_file.sh
 
-COPY /srcs/init_database.sh /tmp
-RUN chmod +x /tmp/init_database.sh
+COPY /srcs/init_wp_database.sh /tmp
+RUN chmod +x /tmp/init_wp_database.sh
 
 COPY /srcs/wordpress.sql /tmp
 
@@ -32,4 +32,6 @@ VOLUME /var/lib/mysql
 
 RUN chmod -R 755 /var/lib/mysql/
 
-CMD ["/bin/sh", "/tmp/mysql_setup.sh"]
+WORKDIR /tmp
+
+CMD ["/bin/sh", "mysql_setup.sh"]
