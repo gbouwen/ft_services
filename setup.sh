@@ -22,10 +22,10 @@ docker build -t nginx srcs/nginx
 docker build -t mysql srcs/mysql
 docker build -t phpmyadmin srcs/phpmyadmin
 docker build -t wordpress srcs/wordpress
-# docker build -t influxdb-alpine srcs/influxdb
-# docker build -t grafana-alpine srcs/grafana
-# docker build -t influxdb-alpine srcs/influxdb
-# docker build -t ftps-alpine srcs/ftps
+docker build -t influxdb srcs/influxdb
+# docker build -t grafana srcs/grafana
+# docker build -t influxdb srcs/influxdb
+# docker build -t ftps srcs/ftps
 
 # Create secrets
 kubectl create -f srcs/secrets.yaml
