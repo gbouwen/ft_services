@@ -63,6 +63,7 @@ spec:
       containers:
       - image: telegraf
         name: telegraf
+        imagePullPolicy: Never
         envFrom:
           - secretRef:
               name: secrets

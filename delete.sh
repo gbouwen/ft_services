@@ -1,3 +1,3 @@
-kubectl delete svc influxdb
-kubectl delete deployment influxdb
-kubectl delete pvc influxdb-pv-claim
+kubectl delete svc telegraf
+kubectl delete deployment telegraf
+kubectl delete configmap telegraf-config

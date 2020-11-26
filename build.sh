@@ -1,3 +1,3 @@
 eval $(minikube docker-env)
-docker build -t influxdb srcs/influxdb
-kubectl create -f srcs/influxdb/influxdb.yaml
+docker build -t telegraf srcs/telegraf
+kubectl create -f srcs/telegraf/telegraf.yaml
