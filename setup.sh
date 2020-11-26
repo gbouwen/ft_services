@@ -6,7 +6,7 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/13 08:39:18 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/11/26 12:57:53 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/11/26 15:35:38 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ docker build -t phpmyadmin srcs/phpmyadmin
 docker build -t wordpress srcs/wordpress
 docker build -t influxdb srcs/influxdb
 docker build -t telegraf srcs/telegraf
-# docker build -t grafana srcs/grafana
+docker build -t grafana srcs/grafana
 # docker build -t ftps srcs/ftps
 
 # Create secrets

@@ -1,3 +1,3 @@
-kubectl delete svc telegraf
-kubectl delete deployment telegraf
-kubectl delete configmap telegraf-config
+kubectl delete svc grafana
+kubectl delete deployment grafana
+kubectl delete configmap grafana-config

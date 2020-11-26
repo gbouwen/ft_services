@@ -3,7 +3,6 @@ FROM alpine:latest
 EXPOSE 8086
 
 RUN apk update
-
 RUN apk add influxdb
 
 ENV INFLUXDB_DB=telegraf

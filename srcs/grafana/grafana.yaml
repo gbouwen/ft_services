@@ -31,7 +31,8 @@ spec:
     spec:
       containers:
       - name: grafana
-        image: grafana/grafana
+        image: grafana
+        imagePullPolicy: Never
         volumeMounts:
         - mountPath: /etc/grafana/provisioning/datasources/influxdb-datasource.yaml
           name: grafana-config
