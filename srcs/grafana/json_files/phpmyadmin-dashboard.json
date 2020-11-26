@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
   "links": [],
   "panels": [
     {
@@ -56,7 +55,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.3.3",
+      "pluginVersion": "7.3.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -102,9 +101,9 @@
           ],
           "tags": [
             {
-              "key": "container_image",
+              "key": "io.kubernetes.container.name",
               "operator": "=",
-              "value": "phpmyadmin/phpmyadmin@sha256"
+              "value": "phpmyadmin"
             }
           ]
         }
@@ -165,5 +164,5 @@
   "timezone": "",
   "title": "phpmyadmin",
   "uid": "wCC0BATMk",
-  "version": 3
+  "version": 1
 }
