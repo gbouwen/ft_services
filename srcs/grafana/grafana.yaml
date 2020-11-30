@@ -34,11 +34,11 @@ spec:
         image: grafana
         imagePullPolicy: Never
         volumeMounts:
-        - mountPath: /etc/grafana/provisioning/datasources/influxdb-datasource.yaml
+        - mountPath: /grafana/provisioning/datasources/influxdb-datasource.yaml
           name: grafana-config
           readOnly: true
           subPath: influxdb-datasource.yaml
-        - mountPath: /etc/grafana/provisioning/dashboards/grafana-dashboard-provider.yaml
+        - mountPath: /grafana/provisioning/dashboards/grafana-dashboard-provider.yaml
           name: grafana-config
           readOnly: true
           subPath: grafana-dashboard-provider.yaml
