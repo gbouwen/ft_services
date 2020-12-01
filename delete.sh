@@ -1,3 +1,2 @@
-kubectl delete svc grafana
-kubectl delete deployment grafana
-kubectl delete configmap grafana-config
+kubectl delete svc ftps
+kubectl delete deployment ftps

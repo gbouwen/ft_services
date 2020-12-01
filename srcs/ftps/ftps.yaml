@@ -34,6 +34,7 @@ spec:
         - secretRef:
             name: secrets
         name: ftps
-        image: mikatux/ftps-server
+        image: ftps
+        imagePullPolicy: Never
         ports:
         - containerPort: 21
