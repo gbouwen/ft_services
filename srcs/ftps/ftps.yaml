@@ -8,9 +8,18 @@ spec:
   selector:
     app: ftps
   ports:
-    - protocol: TCP
+    - name: active
+      protocol: TCP
+      port: 20
+      targetPort: 20
+    - name: passive
+      protocol: TCP
       port: 21
       targetPort: 21
+    - name: pasv
+      protocol: TCP
+      port: 40000
+      targetPort: 40000
   type: LoadBalancer
 
 ---
@@ -37,4 +46,31 @@ spec:
         image: ftps
         imagePullPolicy: Never
         ports:
+        - containerPort: 20
         - containerPort: 21
+        - containerPort: 40000
+        volumeMounts:
+        - name: ftps-persistent-storage
+          mountPath: /home/admin
+      volumes:
+      - name: ftps-persistent-storage
+        persistentVolumeClaim:
+          claimName: ftps-pv-claim
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ftps-pv-claim
+  labels:
+    app: ftps
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  selector:
+    matchLabels:
+      vol: ftps
