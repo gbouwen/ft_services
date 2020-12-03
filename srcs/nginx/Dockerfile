@@ -27,19 +27,14 @@ RUN nginx -t
 
 RUN apk add openssh openrc
 
-RUN adduser -S admin
+RUN adduser -S admin --shell /bin/sh
 RUN echo "admin:admin" | chpasswd
 RUN chown -R admin /home/admin
-
-VOLUME ["/sys/fs/cgroup"]
-
-RUN rm -rf /etc/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_dsa_key
 
 RUN mkdir -p /var/run/sshd
 RUN rc-update add sshd
 RUN rc-status
 RUN touch /run/openrc/softlevel
-#RUN /usr/sbin/sshd -D
 
 COPY /srcs/nginx_setup.sh /tmp
 
