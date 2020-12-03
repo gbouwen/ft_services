@@ -1,4 +1,5 @@
 eval $(minikube docker-env)
-docker build -t ftps srcs/ftps
 
-kubectl create -f srcs/ftps/ftps.yaml
+docker build -t nginx srcs/nginx
+
+kubectl create -f srcs/nginx/nginx.yaml

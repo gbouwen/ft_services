@@ -1,8 +1,11 @@
 FROM alpine:latest
 
-EXPOSE 80 443
+EXPOSE 22 80 443
 
 RUN apk update
+
+# nginx
+
 RUN apk	add nginx
 
 RUN adduser -D -g 'www' www
@@ -20,4 +23,23 @@ COPY /srcs/key.pem /etc/ssl/private/
 
 RUN nginx -t
 
-CMD ["nginx", "-g", "daemon off;"]
+# ssh
+
+RUN apk add openssh openrc
+
+VOLUME ["/sys/fs/cgroup"]
+
+RUN rm -rf /etc/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_dsa_key
+
+RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
+RUN ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t dsa
+RUN mkdir -p /var/run/sshd
+RUN rc-update add sshd
+RUN rc-status
+RUN touch /run/openrc/softlevel
+#RUN /usr/sbin/sshd -D
+
+#CMD ["/usr/sbin/sshd", "-D"]
+COPY /srcs/nginx_setup.sh /tmp
+
+CMD ["/bin/sh", "tmp/nginx_setup.sh"]

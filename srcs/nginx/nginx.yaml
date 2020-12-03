@@ -8,6 +8,10 @@ spec:
   selector:
     app: nginx
   ports:
+    - name: ssh
+      protocol: TCP
+      port: 22
+      targetPort: 22
     - name: http
       protocol: TCP
       port: 80
@@ -41,3 +45,4 @@ spec:
         ports:
         - containerPort: 80
         - containerPort: 443
+        - containerPort: 22
