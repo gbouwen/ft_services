@@ -6,7 +6,7 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/13 08:39:18 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/12/03 10:46:35 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/12/03 13:54:00 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,4 +72,4 @@ kubectl create -f srcs/influxdb/influxdb.yaml
 kubectl create -f srcs/telegraf/telegraf.yaml
 
 # Configure FTPS
-kubectl create -f srcs/yaml_files/ftps.yaml
+kubectl create -f srcs/ftps/ftps.yaml
