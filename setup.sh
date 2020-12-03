@@ -6,7 +6,7 @@
 #    By: gbouwen <marvin@codam.nl>                    +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/13 08:39:18 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/11/26 15:35:38 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/12/03 10:46:35 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ docker build -t wordpress srcs/wordpress
 docker build -t influxdb srcs/influxdb
 docker build -t telegraf srcs/telegraf
 docker build -t grafana srcs/grafana
-# docker build -t ftps srcs/ftps
+docker build -t ftps srcs/ftps
 
 # Create secrets
 kubectl create -f srcs/secrets.yaml
@@ -72,4 +72,4 @@ kubectl create -f srcs/influxdb/influxdb.yaml
 kubectl create -f srcs/telegraf/telegraf.yaml
 
 # Configure FTPS
-# kubectl create -f srcs/yaml_files/ftps.yaml
+kubectl create -f srcs/yaml_files/ftps.yaml
