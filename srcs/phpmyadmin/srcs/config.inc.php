@@ -35,6 +35,9 @@ $cfg['Servers'][$i]['port'] = '3306';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = true;
 
+// Reverse proxy?
+$cfg['PmaAbsoluteUri'] = '/';
+
 /**
  * phpMyAdmin configuration storage settings.
  */
