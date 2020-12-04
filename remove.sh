@@ -1,3 +1,2 @@
 eval $(minikube docker-env)
-docker rmi nginx
-docker rmi phpmyadmin
+docker rmi wordpress
