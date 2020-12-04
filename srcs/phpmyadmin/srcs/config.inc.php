@@ -36,7 +36,7 @@ $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = true;
 
 // Reverse proxy?
-$cfg['PmaAbsoluteUri'] = '/';
+$cfg['PmaAbsoluteUri'] = '/phpmyadmin';
 
 /**
  * phpMyAdmin configuration storage settings.
