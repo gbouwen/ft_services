@@ -19,11 +19,6 @@ COPY /srcs/create_init_file.sh /tmp
 RUN chmod +x /tmp/create_init_file.sh
 RUN sh /tmp/create_init_file.sh
 
-COPY /srcs/init_wp_database.sh /tmp
-RUN chmod +x /tmp/init_wp_database.sh
-
-COPY /srcs/wordpress.sql /tmp
-
 COPY /srcs/my.cnf /etc/mysql/my.cnf
 COPY /srcs/mysql_setup.sh /tmp
 RUN chmod +x /tmp/mysql_setup.sh
