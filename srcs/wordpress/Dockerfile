@@ -25,6 +25,7 @@ WORKDIR /
 COPY /srcs/install-wp.sh /tmp
 RUN chmod +x /tmp/install-wp.sh
 
+RUN chmod 777 /var/www/wordpress/wp-content
 COPY /srcs/php.ini /etc/php7/php.ini
 
 # NginX
