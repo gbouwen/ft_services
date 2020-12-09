@@ -33,3 +33,20 @@
 # ACCESS POD
 
   kubectl exec -it POD_NAME -- /bin/sh
+
+# LOG IN WITH SSH
+
+  ssh admin@192.168.99.200
+  password = admin
+
+# LOG IN TO FILEZILLA
+
+  open filezilla
+  open site manager
+  new site (give it a name)
+  host = 192.168.99.200
+  port = 21
+  user = admin
+  connect
+  password = admin
+  upload a file
