@@ -1,34 +1,39 @@
+# INSTALL MINIKUBE @ CODAM
+
+  brew install minikube
+
+# INSTALL KUBECTL @ CODAM
+
+  brew install kubectl
+
+# INSTALL DOCKER @ CODAM
+
+  go to msc and install docker
+
+# INSTALL FILEZILLA
+
+  go to filezilla-project.org and download filezilla client
+
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # RUN THESE COMMANDS BEFORE STARTING DOCKER @ CODAM
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   mkdir -p ~/goinfre/docker
   rm -rf ~/Library/Containers/com.docker.docker
   ln -s ~/goinfre/docker ~/Library/Containers/com.docker.docker
 
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # RUN THESE COMMANDS BEFORE STARTING MINIKUBE @ CODAM
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   mkdir -p ~/goinfre/minikube
   chmod +x ~/goinfre/minikube
   export MINIKUBE_HOME=/Volumes/Storage/goinfre/gbouwen/minikube/
 
-# HOW TO CREATE DATA SOURCE IN GRAFANA
-  create database in influxdb
-  go to grafana -> add datasource
-  url = http://influxdb:8086
-  database = telegraf
+# USEFUL COMMANDS
 
-# USEFUL DOCKER STUFF
-
-  # build docker image
-  docker build -t IMAGE_NAME location/of/dockerfile
-
-  # run docker image
-  docker run -it IMAGE_NAME
-
-  # remove all docker containers
-  docker rm -f $(docker ps -a -q)
-
-  # use minikube docker environment
-  eval $(minikube docker-env)
+  kubectl get all
+  minikube dashboard
 
 # ACCESS POD
 
@@ -50,3 +55,5 @@
   connect
   password = admin
   upload a file
+
+# USERNAME AND PASSWORD FOR EVERYTHING = admin admin
