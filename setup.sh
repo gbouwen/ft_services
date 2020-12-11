@@ -61,6 +61,7 @@ kubectl create configmap grafana-config \
 		--from-file=srcs/grafana/json_files/wordpress-dashboard.json \
 		--from-file=srcs/grafana/json_files/influxdb-dashboard.json \
 		--from-file=srcs/grafana/json_files/telegraf-dashboard.json \
+		--from-file=srcs/grafana/json_files/ftps-dashboard.json \
 		--from-file=srcs/grafana/json_files/grafana-dashboard.json
 
 kubectl create -f srcs/grafana/grafana.yaml

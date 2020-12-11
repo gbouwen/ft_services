@@ -66,14 +66,14 @@ spec:
           name: grafana-config
           readOnly: true
           subPath: telegraf-dashboard.json
-        - mountPath: /var/lib/grafana/dashboards/grafana-dashboard.json
-          name: grafana-config
-          readOnly: true
-          subPath: grafana-dashboard.json
         - mountPath: /var/lib/grafana/dashboards/ftps-dashboard.json
           name: grafana-config
           readOnly: true
           subPath: ftps-dashboard.json
+        - mountPath: /var/lib/grafana/dashboards/grafana-dashboard.json
+          name: grafana-config
+          readOnly: true
+          subPath: grafana-dashboard.json
         ports:
         - containerPort: 3000
       volumes:
