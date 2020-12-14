@@ -47,13 +47,11 @@
 # LOG IN TO FILEZILLA
 
   open filezilla
-  open site manager
-  new site (give it a name)
   host = 192.168.99.200
-  port = 21
-  user = admin
-  connect
+  username = admin
   password = admin
-  upload a file
+  port = 21
+  quickconnect
+  upload some files!
 
 # USERNAME AND PASSWORD FOR EVERYTHING = admin admin
