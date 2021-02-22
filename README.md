@@ -20,10 +20,11 @@ You will need to set up a multi-service cluster.
   - A container with an NginX server listening on ports 80 and 443.  
     Port 80 will be http, and should be a systematic redirection of type 301 to 443, which will be https.  
     This container will allow access to a /wordpress route that makes a 307 redirect to IP:WP_PORT.  
-    It will also allow access to a /phpmyadmin route with a reverse proxy to IP:PMA_PORT.
+    It will also allow access to a /phpmyadmin route with a reverse proxy to IP:PMA_PORT.  
     You also must be able to access the NginX container with SSH.
   - A FTPS server listening on port 21.
   - A Grafana platform, listening on port 3000, linked with an InfluxDB database.  
-    Grafana will be monitoring all containers. You must create one dashboard per service. InfluxDB and Grafana will be in different containers.
+    Grafana will be monitoring all containers. You must create one dashboard per service.  
+    InfluxDB and Grafana will be in different containers.
   - In case of a crash or stop of a database container, you will have to make sure the data persists.
   - All your containers must restart in case of a crash or stop of one of its components.
